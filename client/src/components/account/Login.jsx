@@ -1,6 +1,6 @@
 import { Box, TextField, Button, styled, Typography } from "@mui/material";
 import React, { useState, useEffect, useContext } from "react";
-import { API } from "../../constants/service/api";
+import { API } from "../../service/api";
 import { DataContext } from "../../context/DataProvider";
 
 import { useNavigate } from "react-router-dom";

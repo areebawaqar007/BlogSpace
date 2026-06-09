@@ -15,16 +15,14 @@ import {
 } from "react-router-dom";
 
 const PrivateRoute = ({ isAuthenticated, ...props }) => {
-  const token = sessionStorage.getItem("accessToken");
-  return isAuthenticated && token ? (
+  const token = sessionStorage.getItem('accessToken');
+  return isAuthenticated && token ? 
     <>
       <Header />
       <Outlet />
-    </>
-  ) : (
-    <Navigate replace to="/account" />
-  );
+    </> : <Navigate replace to='/account' />
 };
+
 
 function App() {
   const [isAuthenticated, isUserAuthenticated] = useState(false);
@@ -32,7 +30,7 @@ function App() {
   return (
     <DataProvider>
       <BrowserRouter>
-        <Header />
+     
         <div style={{ marginTop: 64 }}>
           <Routes>
             <Route
