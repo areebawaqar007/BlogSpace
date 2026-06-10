@@ -13,6 +13,7 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
+import CreatePost from "./components/create/CreatePost";
 
 const PrivateRoute = ({ isAuthenticated, ...props }) => {
   const token = sessionStorage.getItem('accessToken');
@@ -44,6 +45,17 @@ function App() {
             >
               <Route path="/" element={<Home />} />
             </Route>
+
+            {/* post */}
+              <Route
+              path="/create"
+              element={<PrivateRoute isAuthenticated={isAuthenticated} />}
+            >
+              <Route path="/create" element={<CreatePost />} />
+            </Route>
+
+
+
           </Routes>
         </div>
       </BrowserRouter>
